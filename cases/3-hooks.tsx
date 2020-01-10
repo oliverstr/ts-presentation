@@ -8,10 +8,10 @@ const UseState: React.FunctionComponent = () => {
     setCount('123'); // 🚨 ERROR
     setCount(12);
 
-    // const [faq, setFaq] = useState<FaqItem>();
+    const [faq, setFaq] = useState<FaqItem>();
 
-    // faq.author.toUpperCase(); // tsc --noEmit
-    // setFaq({ lastName: 'james' }); // 🚨 ERROR
+    faq.author.toUpperCase(); // tsc --noEmit
+    setFaq({ lastName: 'james' }); // 🚨 ERROR
 
     return (
         <div>
@@ -28,13 +28,13 @@ const UseEffect = () => {
         return true; // 🚨 ERROR
     }, [])
 
-    // useEffect(() => {
-    //     console.log('Component mounted');
+    useEffect(() => {
+        console.log('Component mounted');
 
-    //     return () => {
-    //         console.log('Cleaning up');
-    //     }
-    // }, [])
+        return () => {
+            console.log('Cleaning up');
+        }
+    }, [])
 
     return (
         <div>
